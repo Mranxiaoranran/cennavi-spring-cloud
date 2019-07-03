@@ -1,3 +1,4 @@
 .idea/
 *.iml
 spring-cloud-center/target/
+spring-cloud-sofa-center/target/
