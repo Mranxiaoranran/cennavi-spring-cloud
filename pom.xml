@@ -22,6 +22,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-cloud-sofa-center</module>
+        <module>spring-cloud-sofa-gate</module>
     </modules>
     <packaging>pom</packaging>
 

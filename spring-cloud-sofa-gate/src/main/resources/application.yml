@@ -1,0 +1,23 @@
+server:
+  port: 80
+spring:
+  application:
+    name: spring-cloud-sofa-gate
+  cloud:
+    gateway:
+      routes:
+      -   id:   MM-USER
+          uri: lb://MM-USER
+          predicates:
+           - Path=/service/user/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9966/eureka/
+
+
+
+
+
+
+
