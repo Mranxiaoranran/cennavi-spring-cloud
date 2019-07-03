@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: cloud-center
+
+server:
+    port: 9000
+
+eureka:
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
