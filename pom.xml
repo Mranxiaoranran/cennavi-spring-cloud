@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.RELEASE</version>
+        <version>2.1.3.RELEASE</version>
     </parent>
 
     <properties>
@@ -16,6 +16,14 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
     </properties>
+
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-sofa</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>spring-cloud-center</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <dependencyManagement>
         <dependencies>
@@ -28,15 +36,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-
-
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-sofa</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-cloud-center</module>
-    </modules>
-    <packaging>pom</packaging>
 
 </project>
