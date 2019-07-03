@@ -2,45 +2,66 @@ package sofa.center.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.shared.Pair;
 import com.netflix.eureka.EurekaServerContext;
 import com.netflix.eureka.EurekaServerContextHolder;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl;
-import io.micrometer.core.instrument.util.JsonUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sofa.center.bean.dto.ServiceInfoDTO;
+import sofa.center.bean.vo.ServiceInfoVO;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class ServiceController {
 
     /**
-     * 查询所有服务
+     * 查询服务列表
      *
      * @return
      */
-    @RequestMapping("/listService.do")
+    @RequestMapping("/listRegisterService.do")
     public String listService() throws JsonProcessingException {
         PeerAwareInstanceRegistryImpl registry = (PeerAwareInstanceRegistryImpl) getRegistry();
         List<Pair<Long, String>> lastNRegisteredInstances = registry.getLastNRegisteredInstances();
-        List<Map<Long,String>> lastRegisteredInstances = new ArrayList<>();
+        List<ServiceInfoDTO> serviceInfoDTOS = new ArrayList<>();
         lastNRegisteredInstances.forEach(
-                key->{
-                    Map<Long,String> map = new HashMap<>(1);
-                    map.put(key.first(),key.second());
-                    lastRegisteredInstances.add(map);
+                key -> {
+                    ServiceInfoDTO serviceInfoDTO = new ServiceInfoDTO();
+                    serviceInfoDTO.setInstanceId(key.second());
+                    serviceInfoDTO.setRegistrationTime(key.first());
+                    serviceInfoDTOS.add(serviceInfoDTO);
                 }
         );
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(lastRegisteredInstances);
+        return mapper.writeValueAsString(serviceInfoDTOS);
     }
 
-  
+    /**
+     * 添加服务
+     *
+     * @return
+     */
+    @RequestMapping("/addService.do")
+    public String addService(@RequestBody ServiceInfoVO serviceInfoVO) throws JsonProcessingException {
+        Map<String, Object> map = new HashMap<>();
+        PeerAwareInstanceRegistryImpl registry = (PeerAwareInstanceRegistryImpl) getRegistry();
+        InstanceInfo.Builder builder = InstanceInfo.Builder.newBuilder();
+        builder.setInstanceId(serviceInfoVO.getInstanceId());
+        builder.setAppName(serviceInfoVO.getAppName());
+        builder.setHostName(serviceInfoVO.getHostName());
+        builder.setIPAddr(serviceInfoVO.getIpAddr());
+        builder.setPort(serviceInfoVO.getPort());
+        InstanceInfo instanceInfo = builder.build();
+        registry.register(instanceInfo, true);
+        map.put("code", "success");
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(map);
+    }
 
 
     private PeerAwareInstanceRegistry getRegistry() {
