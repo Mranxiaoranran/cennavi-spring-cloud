@@ -3,3 +3,10 @@
 spring-cloud-center/target/
 spring-cloud-sofa-center/target/
 spring-cloud-sofa-gate/target/
+spring-cloud-sofa-sidecar/target/
+spring-cloud-sofa-common/target/classes/META-INF/spring-cloud-sofa-common.kotlin_module
+spring-cloud-sofa-auth/target/classes/sofa/auth/util/ClientTokenUtil.class
+spring-cloud-sofa-common/target/
+spring-cloud-sofa-drm/target/
+spring-cloud-sofa-auth/target/
+spring-cloud-sofa-common-biz/target/

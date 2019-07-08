@@ -6,10 +6,10 @@ spring:
   cloud:
     gateway:
       routes:
-      -   id:   MM-USER
-          uri: lb://MM-USER
-          predicates:
-           - Path=/service/user/**
+        -      id:  spring-cloud-sofa-auth
+               uri: lb://spring-cloud-sofa-auth
+               predicates:
+                 - Path= /api/auth/**
 eureka:
   client:
     service-url:

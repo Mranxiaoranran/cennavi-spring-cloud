@@ -1,0 +1,25 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: spring-cloud-sofa-auth
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url:               jdbc:mysql://148.70.150.51:3306/sofa
+    username:           root
+    password:           luori5&1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9966/eureka/
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+
+
+
+
+

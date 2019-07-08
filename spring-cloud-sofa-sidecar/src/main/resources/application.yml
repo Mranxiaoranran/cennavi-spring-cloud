@@ -1,0 +1,13 @@
+server:
+  port: 5688
+spring:
+  application:
+    name: ace-sidecar-server
+sidecar:
+  port: 8080
+  health:
+    uri: http://localhost:${sidecar.port}/weimo_web_war/health
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9966/eureka/
