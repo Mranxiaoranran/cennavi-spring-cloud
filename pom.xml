@@ -29,6 +29,7 @@
         <module>spring-cloud-sofa-drm</module>
         <module>spring-cloud-sofa-common</module>
         <module>spring-cloud-sofa-common-biz</module>
+        <module>spring-cloud-sofa-tracer</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -73,7 +74,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.18</version>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
