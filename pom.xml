@@ -30,6 +30,7 @@
         <module>spring-cloud-sofa-common</module>
         <module>spring-cloud-sofa-common-biz</module>
         <module>spring-cloud-sofa-tracer</module>
+        <module>spring-cloud-sofa-file</module>
     </modules>
     <packaging>pom</packaging>
 
