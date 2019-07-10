@@ -1,6 +1,8 @@
 package sofa.gate.filter;
 
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -26,6 +28,10 @@ import java.nio.charset.StandardCharsets;
  */
 @Component
 public class AuthFilter implements GlobalFilter {
+
+    private final Logger log = LoggerFactory.getLogger(AuthFilter.class);
+
+
     /**
      * JWT 存储在请求头中的key值
      */
@@ -46,7 +52,7 @@ public class AuthFilter implements GlobalFilter {
             //获取token式会发生异常，不过异常产生的原因可能是时间过期
             TokenDTO tokenDTO = JwtUtil.decryptToken(authorization);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("非法token", e);
             return DealResult.dealTokenError(exchange);
         }
         ServerHttpRequest build = mutate.build();
