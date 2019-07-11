@@ -1,3 +1,4 @@
+USE sofa;
 
 CREATE TABLE SYS_DRM(
     ID              INT          primary key auto_increment COMMENT  '主键',

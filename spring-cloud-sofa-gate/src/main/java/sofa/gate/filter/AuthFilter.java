@@ -3,8 +3,10 @@ package sofa.gate.filter;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.Ordered;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import reactor.core.publisher.Mono;
 import sofa.common.bean.TokenDTO;
 import sofa.common.jwt.JwtUtil;
 import sofa.gate.common.result.DealResult;
+import sofa.gate.fegin.DrmService;
 
 import java.nio.charset.StandardCharsets;
 
@@ -39,6 +42,13 @@ public class AuthFilter implements GlobalFilter {
 
     private final String IGNORE = "/api/auth/user/login.do";
 
+    @Lazy
+    @Autowired
+    private DrmService drmService;
+
+
+    private static final String AUTH_FILTER_CHECK_TOKEN = "AUTH_FILTER_CHECK_TOKEN";
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
@@ -48,13 +58,16 @@ public class AuthFilter implements GlobalFilter {
         }
         String authorization = request.getHeaders().getFirst("Authorization");
         ServerHttpRequest.Builder mutate = request.mutate();
-        try {
-            //获取token式会发生异常，不过异常产生的原因可能是时间过期
-            TokenDTO tokenDTO = JwtUtil.decryptToken(authorization);
-        } catch (Exception e) {
-            log.error("非法token", e);
-            return DealResult.dealTokenError(exchange);
+        if (drmService.getDrmStatus(AUTH_FILTER_CHECK_TOKEN)) {
+            try {
+                //获取token式会发生异常，不过异常产生的原因可能是时间过期
+                TokenDTO tokenDTO = JwtUtil.decryptToken(authorization);
+            } catch (Exception e) {
+                log.error("非法token", e);
+                return DealResult.dealTokenError(exchange);
+            }
         }
+
         ServerHttpRequest build = mutate.build();
         return chain.filter(exchange.mutate().request(build).build());
     }

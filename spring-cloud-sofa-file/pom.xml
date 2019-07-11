@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-cloud-sofa-file</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-cloud-sofa-file-api</module>
+        <module>spring-cloud-sofa-file-local-storage</module>
+    </modules>
 
 
 </project>
