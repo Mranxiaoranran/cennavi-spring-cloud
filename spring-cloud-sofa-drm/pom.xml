@@ -41,6 +41,7 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.sofa</groupId>
             <artifactId>spring-cloud-sofa-common</artifactId>

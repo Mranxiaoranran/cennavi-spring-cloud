@@ -9,26 +9,32 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-sofa-file-api</artifactId>
+    <artifactId>spring-cloud-sofa-file-common</artifactId>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.sofa</groupId>
-            <artifactId>spring-cloud-sofa-file-local-storage</artifactId>
+            <artifactId>spring-cloud-sofa-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
-
 
 </project>
