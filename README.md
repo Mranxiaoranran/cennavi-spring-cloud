@@ -75,7 +75,7 @@ spring-cloud-sofa-center
               打成jar包后，java -jar 即可启动
                   
              
-    spring-cloud-sofa-gate
+   spring-cloud-sofa-gate
    
      分布式系统的网关，提供对外系统的服务能力，目前底层使用的框架为 spring-cloud-gateway.网关核心能力是提供外部系统调用能力，
   
