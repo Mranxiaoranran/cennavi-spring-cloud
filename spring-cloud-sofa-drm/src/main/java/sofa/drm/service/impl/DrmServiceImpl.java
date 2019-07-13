@@ -2,7 +2,7 @@ package sofa.drm.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sofa.drm.bean.DrmDO;
+import sofa.common.bean.dal.DrmDO;
 import sofa.drm.dal.DrmMapper;
 import sofa.drm.service.DrmService;
 @Service

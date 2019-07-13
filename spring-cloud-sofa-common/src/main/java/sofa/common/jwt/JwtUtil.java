@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.joda.time.DateTime;
-import sofa.common.bean.TokenDTO;
+import sofa.common.bean.dto.TokenDTO;
 import sofa.common.rsa.JwtRsaUtil;
 
 import java.security.KeyFactory;

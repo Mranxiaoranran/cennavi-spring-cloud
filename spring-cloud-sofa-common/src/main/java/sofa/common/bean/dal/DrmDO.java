@@ -1,4 +1,4 @@
-package sofa.drm.bean;
+package sofa.common.bean.dal;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

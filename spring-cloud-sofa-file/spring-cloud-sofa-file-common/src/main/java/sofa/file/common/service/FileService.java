@@ -2,7 +2,7 @@ package sofa.file.common.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import sofa.common.bean.FileStorageTypeEnum;
-import sofa.file.common.bean.FileDO;
+import sofa.common.bean.dal.FileDO;
 import sofa.file.common.dal.FileMapper;
 
 import java.io.IOException;

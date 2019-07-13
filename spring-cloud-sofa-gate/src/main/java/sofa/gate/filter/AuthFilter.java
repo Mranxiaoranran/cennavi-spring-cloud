@@ -1,26 +1,19 @@
 package sofa.gate.filter;
 
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.core.Ordered;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import sofa.common.bean.TokenDTO;
+import sofa.common.bean.dto.TokenDTO;
 import sofa.common.jwt.JwtUtil;
 import sofa.gate.common.result.DealResult;
 import sofa.gate.fegin.DrmService;
-
-import java.nio.charset.StandardCharsets;
 
 
 /**

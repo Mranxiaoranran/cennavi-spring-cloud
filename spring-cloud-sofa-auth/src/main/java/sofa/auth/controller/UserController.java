@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sofa.auth.service.UserService;
-import sofa.common.bean.BaseDTO;
-import sofa.common.bean.BaseErrorDTO;
+import sofa.common.bean.dto.BaseDTO;
+import sofa.common.bean.dto.BaseErrorDTO;
 import sofa.common.bean.BaseErrorEnum;
-import sofa.common.bean.UserVO;
+import sofa.common.bean.vo.UserVO;
 
 @RestController
 @RequestMapping("/api/auth/user")

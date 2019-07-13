@@ -1,4 +1,4 @@
-package sofa.center.bean.dto;
+package sofa.common.bean.dto;
 
 /**
  * 服务传输数据

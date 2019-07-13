@@ -1,6 +1,7 @@
-package sofa.common.bean;
+package sofa.common.bean.dto;
 
 import lombok.Data;
+import sofa.common.bean.dto.BaseDTO;
 
 @Data
 public class BaseSuccessDTO<T> extends BaseDTO {

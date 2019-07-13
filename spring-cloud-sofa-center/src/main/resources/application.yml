@@ -1,13 +1,14 @@
 spring:
-    application:
-        name: cloud-center
-
+  application:
+    name: cloud-center
 server:
-    port: 9966
+  port: 9966
 
 eureka:
-    client:
-        registerWithEureka: false
-        fetchRegistry: false
-        service-url:
-            defaultZone : http://localhost:9966/eureka/
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:9966/eureka/

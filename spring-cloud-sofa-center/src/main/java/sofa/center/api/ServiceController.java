@@ -11,8 +11,8 @@ import com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sofa.center.bean.dto.ServiceInfoDTO;
-import sofa.center.bean.vo.ServiceInfoVO;
+import sofa.common.bean.dto.ServiceInfoDTO;
+import sofa.common.bean.vo.ServiceInfoVO;
 
 import java.util.*;
 

@@ -1,8 +1,7 @@
 package sofa.auth.service;
 
-import sofa.common.bean.BaseDTO;
-import sofa.common.bean.BaseErrorDTO;
-import sofa.common.bean.UserVO;
+import sofa.common.bean.dto.BaseDTO;
+import sofa.common.bean.vo.UserVO;
 
 public interface UserService {
     /**

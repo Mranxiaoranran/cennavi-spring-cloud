@@ -28,10 +28,13 @@
         <module>spring-cloud-sofa-auth</module>
         <module>spring-cloud-sofa-drm</module>
         <module>spring-cloud-sofa-common</module>
-        <module>spring-cloud-sofa-common-biz</module>
         <module>spring-cloud-sofa-tracer</module>
         <module>spring-cloud-sofa-file</module>
+        <module>spring-cloud-sofa-tair</module>
+        <module>spring-cloud-sofa-message</module>
+        <module>spring-cloud-sofa-todo</module>
     </modules>
+
     <packaging>pom</packaging>
 
     <dependencyManagement>
@@ -75,6 +78,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.18</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>

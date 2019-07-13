@@ -1,4 +1,4 @@
-package sofa.center.bean.vo;
+package sofa.common.bean.vo;
 
 /**
  * 服务请求参数

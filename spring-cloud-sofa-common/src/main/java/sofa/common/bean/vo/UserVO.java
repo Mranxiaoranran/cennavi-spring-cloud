@@ -1,4 +1,4 @@
-package sofa.common.bean;
+package sofa.common.bean.vo;
 
 import lombok.Data;
 
