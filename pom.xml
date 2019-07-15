@@ -33,6 +33,7 @@
         <module>spring-cloud-sofa-tair</module>
         <module>spring-cloud-sofa-message</module>
         <module>spring-cloud-sofa-todo</module>
+        <module>spring-cloud-sofa-api</module>
     </modules>
 
     <packaging>pom</packaging>

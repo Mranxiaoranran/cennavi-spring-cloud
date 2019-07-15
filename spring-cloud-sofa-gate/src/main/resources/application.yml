@@ -1,13 +1,6 @@
 server:
   port: 80
 spring:
-  application:
-    name: spring-cloud-sofa-gate
-  zipkin:
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      percentage: 1.0
   cloud:
     gateway:
       routes:
@@ -15,11 +8,15 @@ spring:
           uri: lb://spring-cloud-sofa-auth
           predicates:
             - Path= /api/auth/**
-        #用户服务(原生)
-        - id: USER-SERVICE-RAW
-          uri: lb://MM-USER
-          predicates:
-            - Path=/service/user/**
+
+  application:
+    name: spring-cloud-sofa-gate
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+
 
 eureka:
   client:

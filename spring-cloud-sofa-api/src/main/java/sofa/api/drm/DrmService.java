@@ -1,4 +1,4 @@
-package sofa.gate.fegin;
+package sofa.api.drm;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

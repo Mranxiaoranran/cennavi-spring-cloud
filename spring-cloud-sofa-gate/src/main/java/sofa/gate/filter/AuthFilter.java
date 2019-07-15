@@ -10,10 +10,10 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import sofa.api.drm.DrmService;
 import sofa.common.bean.dto.TokenDTO;
 import sofa.common.jwt.JwtUtil;
 import sofa.gate.common.result.DealResult;
-import sofa.gate.fegin.DrmService;
 
 
 /**
