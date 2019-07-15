@@ -106,4 +106,12 @@ spring-cloud-sofa-center
                    predicates:  
                      - Path= /api/auth/**             何种url会被转发
          
-         
+ spring-cloud-drm
+        
+        分布式系统的开关，主要是用于对分布式系统的一些场景可以进行动态的开启，和关闭
+        
+        使用的时候，在drm的地方注册开关code,开关名称，开关状态 0 为关闭，1为开启
+        
+        并且提供了一个fegin 的接口，参数为开关code ,返回值为 true 开关开启， false 开关关闭
+        
+    
