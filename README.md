@@ -81,6 +81,29 @@ spring-cloud-sofa-center
   
      网关状态码已经进行明确的规定，如下图
        
-      
-
-      
+      code（返回码）	msg（返回码描述）	sub_code（明细返回码）	sub_msg（明细返回码描述）	解决方案
+        
+        10000            服务调用成功
+                      
+       20000           	服务不可用
+       
+       20001           	授权权限不足
+       
+       40001           缺少必选参数
+       
+       40004           业务处理失败
+       
+       40006           权限不足	
+       
+     网关使用的的路由转发策略是
+         Path Route  Predicate Factory，配置的原则和nginx 的负载均衡配置相同
+         spring:
+           cloud:
+             gateway:
+               routes:
+                 - id:  spring-cloud-sofa-auth        服务名称，注册在中心的服务
+                   uri: lb://spring-cloud-sofa-auth   固定格式 lb://服务名称，注册在注册中心的服务
+                   predicates:  
+                     - Path= /api/auth/**             何种url会被转发
+         
+         
