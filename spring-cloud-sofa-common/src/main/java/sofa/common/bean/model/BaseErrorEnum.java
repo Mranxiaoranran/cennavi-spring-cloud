@@ -5,9 +5,12 @@ public enum BaseErrorEnum {
 
     INVALID_AUTH_TOKEN(20001, "授权权限不足", "invalid-auth-token", "无效的访问令牌"),
 
-    USER_PASSWORD_WRONG(40004,"业务处理失败","password-wrong","账号或密码错误"),
+    USER_PASSWORD_WRONG(40004, "业务处理失败", "password-wrong", "账号或密码错误"),
 
-    SUCCESS_REQUEST(1000,"接口调用成功，调用结果请参考具体的API文档所对应的业务返回参数","","");
+    SUCCESS_REQUEST(1000, "接口调用成功，调用结果请参考具体的API文档所对应的业务返回参数", "", ""),
+
+    WRONG_REQUEST(40004, "业务处理失败", "WRONG_REQUEST", "服务器发生异常");
+
 
     /**
      * 状态码
