@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import sofa.common.bean.BaseErrorEnum;
+import sofa.common.bean.model.BaseErrorEnum;
 import sofa.common.bean.dto.BaseErrorDTO;
 
 import java.nio.charset.StandardCharsets;

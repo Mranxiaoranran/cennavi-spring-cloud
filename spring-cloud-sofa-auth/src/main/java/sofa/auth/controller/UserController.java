@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sofa.auth.service.UserService;
 import sofa.common.bean.dto.BaseDTO;
 import sofa.common.bean.dto.BaseErrorDTO;
-import sofa.common.bean.BaseErrorEnum;
+import sofa.common.bean.model.BaseErrorEnum;
 import sofa.common.bean.vo.UserVO;
 
 @RestController

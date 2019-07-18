@@ -31,12 +31,8 @@ CREATE TABLE   SYS_FILE_LOCAL_STORAGE(
 
    FILE_CODE              VARCHAR(64)         COMMENT  '文件编码',
 
-   FILE_PATH              VARCHAR(128)        COMMENT  '文件路径'
+   FILE_PATH              VARCHAR(128)        COMMENT  '文件路径',
+
+   FILE_LOCAL_PATH       VARCHAR(256)         COMMENT  '文件存储相对路径'
 )
 
-CREATE TABLE SYS_FILE_STORAGE_TYPE_DRM(
-
-     ID                       INT              primary key auto_increment COMMENT  '主键',
-
-    FILE_STORAGE_TYPE         INT               COMMENT    '文件存储类型'
-)

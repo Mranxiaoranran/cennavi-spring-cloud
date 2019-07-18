@@ -1,3 +1,4 @@
 E:\spring-cloud-sofa\spring-cloud-sofa-file\spring-cloud-sofa-file-common\src\main\java\sofa\file\common\service\FileService.java
 E:\spring-cloud-sofa\spring-cloud-sofa-file\spring-cloud-sofa-file-common\src\main\java\sofa\file\common\dal\FileMapper.java
-E:\spring-cloud-sofa\spring-cloud-sofa-file\spring-cloud-sofa-file-common\src\main\java\sofa\file\common\bean\FileDO.java
+E:\spring-cloud-sofa\spring-cloud-sofa-file\spring-cloud-sofa-file-common\src\main\java\sofa\file\common\dal\FileStorageTypeMapper.java
+E:\spring-cloud-sofa\spring-cloud-sofa-file\spring-cloud-sofa-file-common\src\main\java\sofa\file\common\FileCommon.java

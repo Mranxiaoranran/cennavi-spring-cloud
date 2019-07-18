@@ -1,9 +1,9 @@
-package sofa.common.bean;
+package sofa.common.bean.dto;
 
 /**
  * 授权访问令牌
  */
-public class AppAuthToken {
+public class AppAuthTokenDTO {
     /**
      * 应用id
      */

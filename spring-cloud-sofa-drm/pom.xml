@@ -47,7 +47,6 @@
             <groupId>org.sofa</groupId>
             <artifactId>spring-cloud-sofa-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
 
 

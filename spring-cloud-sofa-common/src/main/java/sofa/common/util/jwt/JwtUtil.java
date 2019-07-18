@@ -1,4 +1,4 @@
-package sofa.common.jwt;
+package sofa.common.util.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -6,7 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.joda.time.DateTime;
 import sofa.common.bean.dto.TokenDTO;
-import sofa.common.rsa.JwtRsaUtil;
+import sofa.common.util.rsa.JwtRsaUtil;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;

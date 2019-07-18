@@ -33,7 +33,9 @@
         <module>spring-cloud-sofa-tair</module>
         <module>spring-cloud-sofa-message</module>
         <module>spring-cloud-sofa-todo</module>
-        <module>spring-cloud-sofa-api</module>
+        <module>spring-cloud-sofa-open-api</module>
+        <module>spring-cloud-sofa-mq</module>
+        <module>spring-cloud-sofa-enterprise-dependencies</module>
     </modules>
 
     <packaging>pom</packaging>

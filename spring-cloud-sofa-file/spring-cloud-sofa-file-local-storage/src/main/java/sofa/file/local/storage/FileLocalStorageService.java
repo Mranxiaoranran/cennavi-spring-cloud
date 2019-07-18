@@ -1,9 +1,11 @@
 package sofa.file.local.storage;
 
 import ch.qos.logback.core.util.DatePatternToRegexUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.joda.time.DateTimeUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
+import sofa.common.bean.dal.FileDO;
 import sofa.file.common.service.FileService;
 
 import java.io.File;
@@ -33,5 +35,13 @@ public class FileLocalStorageService extends FileService {
         File file = new File(fileStr);
         file.createNewFile();
         FileCopyUtils.copy(bytes, file);
+    }
+
+    @Override
+    public byte[] downloadFile(String fileCode) {
+        QueryWrapper<FileDO> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("FILE_CODE",fileCode);
+
+        return new byte[0];
     }
 }

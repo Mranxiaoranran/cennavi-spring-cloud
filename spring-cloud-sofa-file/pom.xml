@@ -15,7 +15,6 @@
         <module>spring-cloud-sofa-file-api</module>
         <module>spring-cloud-sofa-file-local-storage</module>
         <module>spring-cloud-sofa-file-common</module>
-        <module>spring-cloud-sofa-file-api</module>
     </modules>
 
 

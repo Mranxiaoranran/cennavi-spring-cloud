@@ -1,8 +1,7 @@
 package sofa.common.bean.dto;
 
 import lombok.Data;
-import sofa.common.bean.BaseErrorEnum;
-import sofa.common.bean.dto.BaseDTO;
+import sofa.common.bean.model.BaseErrorEnum;
 
 /**
  * 基础VO传输对象

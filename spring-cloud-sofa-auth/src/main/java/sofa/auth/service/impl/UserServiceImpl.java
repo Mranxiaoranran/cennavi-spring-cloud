@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sofa.auth.dal.UserMapper;
 import sofa.auth.service.UserService;
-import sofa.common.bean.*;
 import sofa.common.bean.dal.UserDO;
 import sofa.common.bean.dto.BaseDTO;
 import sofa.common.bean.dto.BaseErrorDTO;
 import sofa.common.bean.dto.BaseSuccessDTO;
 import sofa.common.bean.dto.TokenDTO;
+import sofa.common.bean.model.BaseErrorEnum;
 import sofa.common.bean.vo.UserVO;
-import sofa.common.jwt.JwtUtil;
+import sofa.common.util.jwt.JwtUtil;
 
 import java.util.HashMap;
 import java.util.Map;

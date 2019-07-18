@@ -27,6 +27,12 @@
             <artifactId>spring-cloud-sofa-file-local-storage</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.sofa</groupId>
+            <artifactId>spring-cloud-sofa-open-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
 
     </dependencies>
 
