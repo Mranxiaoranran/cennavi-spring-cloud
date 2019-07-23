@@ -12,3 +12,8 @@ spring-cloud-sofa-auth/target/
 spring-cloud-sofa-common-biz/target/
 logs/
 spring-cloud-sofa-file/spring-cloud-sofa-file-api/target/
+spring-cloud-sofa-test/target/
+spring-cloud-sofa-process/target/
+spring-cloud-sofa-open-api/target/classes/META-INF/spring-cloud-sofa-open-api.kotlin_module
+spring-cloud-sofa-open-api/target/
+spring-cloud-sofa-orm/target/

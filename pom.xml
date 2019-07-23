@@ -36,6 +36,13 @@
         <module>spring-cloud-sofa-open-api</module>
         <module>spring-cloud-sofa-mq</module>
         <module>spring-cloud-sofa-enterprise-dependencies</module>
+        <module>spring-cloud-sofa-orm</module>
+        <module>spring-cloud-sofa-process</module>
+        <module>spring-cloud-sofa-test</module>
+        <module>spring-cloud-sofa-framwork</module>
+        <module>spring-cloud-sofa-base</module>
+        <module>spring-cloud-sofa-biz</module>
+        <module>spring-cloud-sofa-biz</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -49,42 +56,39 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>0.7.0</version>
             </dependency>
-
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.9.5</version>
             </dependency>
-
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.33</version>
             </dependency>
-
-
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.1.2</version>
             </dependency>
-
             <!-- 引入mysql连接SDK -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.18</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-spring-boot-starter-basic</artifactId>
+                <version>6.4.1</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
-
 
 </project>

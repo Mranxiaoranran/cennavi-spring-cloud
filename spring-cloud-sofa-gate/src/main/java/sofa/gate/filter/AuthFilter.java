@@ -10,7 +10,7 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-import sofa.api.drm.DrmService;
+import sofa.api.drm.DrmOpenService;
 import sofa.common.bean.dto.TokenDTO;
 import sofa.common.util.jwt.JwtUtil;
 import sofa.gate.common.result.DealResult;
@@ -37,7 +37,7 @@ public class AuthFilter implements GlobalFilter {
 
     @Lazy
     @Autowired
-    private DrmService drmService;
+    private DrmOpenService drmService;
 
 
     private static final String AUTH_FILTER_CHECK_TOKEN = "AUTH_FILTER_CHECK_TOKEN";

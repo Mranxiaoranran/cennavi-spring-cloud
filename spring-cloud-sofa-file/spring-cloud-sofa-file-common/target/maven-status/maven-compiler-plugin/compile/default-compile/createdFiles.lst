@@ -1,2 +1,4 @@
 sofa\file\common\dal\FileStorageTypeMapper.class
 sofa\file\common\FileCommon.class
+sofa\file\common\service\FileService.class
+sofa\file\common\dal\FileMapper.class

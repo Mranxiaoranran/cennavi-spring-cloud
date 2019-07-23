@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:flowable="http://flowable.org/bpmn"
+             typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath"
+             targetNamespace="http://www.flowable.org/processdef">
+    <!-- 单流程审批模板 -->
+    <!--
+       什么叫单流程
+       1  只有一个审批人
+
+       2  只有一个提交人
+
+       3  并且使用流程框架的人 要提供 流程通过的回调接口，并且流程框架会把请求参数返回
+     -->
+    <process id="singleProcessApproval" name="单流程审批" isExecutable="true">
+        <!-- 开始流程-->
+        <startEvent id="startEvent"/>
+        <sequenceFlow sourceRef="startEvent" targetRef="approveTask"/>
+        <userTask id="approveTask" name="开始单流程审批" flowable:assignee="${approverUserId}"/>
+        <sequenceFlow sourceRef="approveTask" targetRef="decision"/>
+        <!-- 流程节点-->
+        <exclusiveGateway id="decision"/>
+        <!-- 如果同意的流转情况-->
+        <sequenceFlow sourceRef="decision" targetRef="singleProcessApprovalDelegate">
+            <conditionExpression xsi:type="tFormalExpression">
+                <![CDATA[  ${approve}  ]]>
+            </conditionExpression>
+        </sequenceFlow>
+        <!-- 不同意的流转情况-->
+        <sequenceFlow sourceRef="decision" targetRef="singleProcessRejectDelegate">
+            <conditionExpression xsi:type="tFormalExpression">
+                <![CDATA[  ${!approve}  ]]>
+            </conditionExpression>
+        </sequenceFlow>
+
+        <!-- 审批通过的情况-->
+        <serviceTask id="singleProcessApprovalDelegate" name="Enter holidays in external system"
+                     flowable:class="sofa.process.delegate.SingleProcessApprovalDelegate"/>
+        <sequenceFlow sourceRef="singleProcessRejectDelegate" targetRef="approveEnd"/>
+
+        <!--  审批不通过 -->
+        <serviceTask id="singleProcessRejectDelegate" name="Send out rejection email"
+                     flowable:class="sofa.process.delegate.SingleProcessRejectDelegate"/>
+        <sequenceFlow sourceRef="singleProcessRejectDelegate" targetRef="rejectEnd"/>
+        <!--  通过情况 -->
+        <endEvent id="approveEnd"/>
+        <!-- 拒绝情况-->
+        <endEvent id="rejectEnd"/>
+    </process>
+</definitions>

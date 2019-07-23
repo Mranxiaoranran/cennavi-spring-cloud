@@ -1,0 +1,24 @@
+server:
+  port: 9093
+spring:
+  application:
+    name: spring-cloud-sofa-activity
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url:               jdbc:mysql://localhost:3306/flowable
+    username:           root
+    password:           luori5&1
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9966/eureka/
+
+
+
+

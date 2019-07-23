@@ -4,7 +4,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import sofa.api.drm.DrmService;
+import sofa.api.drm.DrmOpenService;
 import sofa.common.bean.dto.BaseDTO;
 import sofa.common.bean.dto.BaseSuccessDTO;
 import sofa.common.bean.model.FileStorageTypeEnum;
@@ -22,7 +22,7 @@ public class FileUploadController {
     private BeanFactory beanFactory;
 
     @Autowired
-    private DrmService drmService;
+    private DrmOpenService drmService;
 
     /**
      * 本地存储开关
